@@ -3,7 +3,7 @@ mod browser;
 mod camera;
 mod particle;
 mod ui_debug;
-mod ui_timer;
+mod ui_score;
 
 use crate::client::browser::BrowserSystem;
 use crate::shared::{developer, inputs, pickup};
@@ -18,11 +18,8 @@ use engine::systems::hdr::HdrMultiplayerPipeline;
 use engine::systems::Scheduler;
 use engine::utils::browser::grow_memory;
 
-// 1080p
-const DEFAULT_WIDTH: u32 = 1920;
-const DEFAULT_HEIGHT: u32 = 1080;
 const FRAMES_PER_SECOND: u64 = 60;
-const GROW_MEMORY_IN_MB: u32 = 800;
+const GROW_MEMORY_IN_MB: u32 = 100;
 
 pub fn main(
   canvas_id: String,
@@ -67,10 +64,12 @@ pub fn main(
   // Register game systems and middlewares
   scheduler.attach_system::<collision::CollisionSystem>();
   scheduler.attach_system::<inputs::InputsSystem>();
-  scheduler.attach_system::<ui_debug::UIDebugSystem>();
   scheduler.attach_system::<developer::DeveloperSystem>();
 
   scheduler.attach_system::<pickup::PickupSystem>();
+
+  scheduler.attach_system::<ui_score::UIScoreSystem>();
+  scheduler.attach_system::<ui_debug::UIDebugSystem>();
 
   scheduler.attach_middleware_with_subsystem::<camera::CameraMiddleware, camera::CameraSubsystem>();
 

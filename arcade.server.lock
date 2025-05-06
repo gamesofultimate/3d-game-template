@@ -2591,8 +2591,8 @@
     },
     {
       "tag": "Struct",
-      "name": "UITimer",
-      "label": "Ui Timer",
+      "name": "UIScore",
+      "label": "Ui Score",
       "default_values": "{  }",
       "duplicate_values": "null",
       "docs": null,

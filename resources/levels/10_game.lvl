@@ -588,6 +588,58 @@
             "SpawnArea": {}
           }
         ]
+      },
+      "bebb6f19-0645-4063-9d04-0d890d44a65f": {
+        "id": "bebb6f19-0645-4063-9d04-0d890d44a65f",
+        "tag": {
+          "name": "UI Score"
+        },
+        "transform": {
+          "transform": {
+            "translation": [
+              -10,
+              -5,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "components": [
+          {
+            "TextComponent": {
+              "block_alignment": {
+                "horizontal": "Right",
+                "vertical": "Top"
+              },
+              "color": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "font": "d5d1c1b8-b275-4cb9-a596-3792aa015bcb",
+              "font_size": 40,
+              "kerning": 1.2,
+              "line_height": 1,
+              "max_width": 200,
+              "opacity": 1,
+              "text": "Score: 0",
+              "text_alignment": "Right"
+            }
+          },
+          {
+            "UIScore": {}
+          }
+        ]
       }
     },
     "models": {

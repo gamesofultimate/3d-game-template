@@ -10,6 +10,8 @@ use super::components::{Ball, Pickup, SpawnArea};
 pub struct PickupSystemData {
   pub spawned: usize,
   pub max_pickups: usize,
+
+  pub player_score: usize,
 }
 
 pub struct PickupSystem {}
@@ -29,6 +31,7 @@ impl System for PickupSystem {
     backpack.insert(PickupSystemData {
       spawned: 0,
       max_pickups: 5,
+      player_score: 0,
     });
   }
 
@@ -40,9 +43,7 @@ impl System for PickupSystem {
 
 impl PickupSystem {
   fn handle_spawn_pickup(&mut self, scene: &mut Scene, backpack: &mut Backpack) -> Option<()> {
-    // check if how many pickups are already spawned
-    let data = backpack.get_mut::<PickupSystemData>().unwrap();
-
+    let data = backpack.get_mut::<PickupSystemData>()?;
     if data.spawned >= data.max_pickups {
       return None;
     }
@@ -75,21 +76,25 @@ impl PickupSystem {
     Some(())
   }
 
-  fn handle_collect_pickup(&mut self, scene: &mut Scene, backpack: &mut Backpack) {
+  fn handle_collect_pickup(&mut self, scene: &mut Scene, backpack: &mut Backpack) -> Option<()> {
     let mut collected = vec![];
 
     for (pickup_entity, (_pickup, _collision)) in
       scene.query_mut::<(&Pickup, &Collision<Ball, Pickup>)>()
     {
       collected.push(pickup_entity);
-      log::error!("Pickup collected: {:?}", pickup_entity);
 
-      let data = backpack.get_mut::<PickupSystemData>().unwrap();
+      let data = backpack.get_mut::<PickupSystemData>()?;
       data.spawned -= 1;
+      data.player_score += 1;
+
+      log::error!("Pickup collected! Score: {}", data.player_score);
     }
 
     for pickup_entity in collected {
       let _ = scene.remove_entity(pickup_entity);
     }
+
+    Some(())
   }
 }

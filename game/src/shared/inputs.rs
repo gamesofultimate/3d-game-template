@@ -62,7 +62,9 @@ impl InputsSystem {
     }
   }
 
-  fn handle_move(&mut self, scene: &mut Scene, delta_time: Seconds) {
+  fn handle_move(&mut self, scene: &mut Scene, backpack: &mut Backpack) {
+    let delta_time = *backpack.get::<Seconds>().unwrap();
+
     for (_, (_transform, ball, physics, input)) in scene.query_mut::<(
       &TransformComponent,
       &mut Ball,
@@ -99,8 +101,6 @@ impl System for InputsSystem {
   }
 
   fn run(&mut self, scene: &mut Scene, backpack: &mut Backpack) {
-    let delta_time = backpack.get::<Seconds>().cloned().unwrap();
-
     #[cfg(target_arch = "wasm32")]
     {
       use super::game_input::GameInputState;
@@ -156,6 +156,6 @@ impl System for InputsSystem {
       self.capture_mouse(&input);
     }
 
-    self.handle_move(scene, delta_time);
+    self.handle_move(scene, backpack);
   }
 }
