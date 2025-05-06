@@ -110,10 +110,10 @@
             "LightComponent": {
               "Directional": {
                 "azimuth": {
-                  "radians": 0
+                  "radians": 4.71238898038469
                 },
                 "inclination": {
-                  "radians": 1
+                  "radians": 6.19591884457987
                 },
                 "intensity": 1,
                 "radiance": [
@@ -414,6 +414,178 @@
           },
           {
             "UIBallVelocity": {}
+          }
+        ]
+      },
+      "4f23165c-a542-43ec-b772-da8971f6bb5f": {
+        "id": "4f23165c-a542-43ec-b772-da8971f6bb5f",
+        "tag": {
+          "name": "Pickup Prefab"
+        },
+        "transform": {
+          "transform": {
+            "translation": [
+              1.5718966,
+              0.3,
+              0
+            ],
+            "rotation": [
+              1.0471975511965976,
+              0,
+              1.0471975511965976
+            ],
+            "scale": [
+              0.2,
+              0.2,
+              0.2
+            ]
+          }
+        },
+        "components": [
+          {
+            "ModelComponent": {
+              "cast_shadows": true,
+              "id": "6fc0cb2e-142d-4c7b-ae9f-bfc9ff68434b",
+              "skip": false,
+              "transform": {
+                "rotation": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "translation": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          },
+          {
+            "PhysicsComponent": {
+              "debug": false,
+              "id": "091a5e1a-775e-42ef-bb55-fb9e1516cfd9",
+              "joint": {
+                "body": {
+                  "allow_rotation": [
+                    true,
+                    true,
+                    true
+                  ],
+                  "allow_translation": [
+                    true,
+                    true,
+                    true
+                  ],
+                  "ccd": false,
+                  "collider_type": {
+                    "Cube": {
+                      "height": 1,
+                      "length": 1,
+                      "width": 1
+                    }
+                  },
+                  "density": 1,
+                  "dynamic_type": "Static",
+                  "friction": 0.1,
+                  "id": "616fe263-6689-4c88-aa58-daa036d3e615",
+                  "is_sensor": true,
+                  "restitution": 0.1
+                },
+                "config": null,
+                "id": "3ff5caa5-c015-418f-a660-02b106fb6f9e",
+                "name": "Joint",
+                "offset": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          },
+          {
+            "Pickup": {}
+          },
+          {
+            "PrefabProviderComponent": {}
+          }
+        ]
+      },
+      "2983382e-3dc9-409f-b6e4-8bd3bea4220b": {
+        "id": "2983382e-3dc9-409f-b6e4-8bd3bea4220b",
+        "tag": {
+          "name": "Pickup Spawn Area"
+        },
+        "transform": {
+          "transform": {
+            "translation": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              6,
+              0.1,
+              6
+            ]
+          }
+        },
+        "components": [
+          {
+            "PhysicsComponent": {
+              "debug": false,
+              "id": "be718425-f08d-4362-aada-151059393c57",
+              "joint": {
+                "body": {
+                  "allow_rotation": [
+                    true,
+                    true,
+                    true
+                  ],
+                  "allow_translation": [
+                    true,
+                    true,
+                    true
+                  ],
+                  "ccd": false,
+                  "collider_type": {
+                    "Cube": {
+                      "height": 1,
+                      "length": 1,
+                      "width": 1
+                    }
+                  },
+                  "density": 1,
+                  "dynamic_type": "Static",
+                  "friction": 0.1,
+                  "id": "0462869a-a5e1-48a4-a610-495fcdb6e683",
+                  "is_sensor": true,
+                  "restitution": 0.1
+                },
+                "config": null,
+                "id": "7aef2400-c752-43b4-bd49-9ad5d28abeee",
+                "name": "Joint",
+                "offset": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          },
+          {
+            "SpawnArea": {}
           }
         ]
       }

@@ -1808,6 +1808,16 @@
     },
     {
       "tag": "Struct",
+      "name": "SpawnArea",
+      "label": "Spawn Area",
+      "default_values": "{  }",
+      "duplicate_values": "null",
+      "docs": null,
+      "fields": [],
+      "private": false
+    },
+    {
+      "tag": "Struct",
       "name": "SpriteComponent",
       "label": "Sprite Component",
       "default_values": "{ alignment: { horizontal: 'Left', vertical: 'Top' }, id: (() => { \n            return Symbol.for(\"SpriteId\");\n           })(), opacity: 1.0, size: \"Relative\" }",
