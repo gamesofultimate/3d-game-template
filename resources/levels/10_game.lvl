@@ -1,0 +1,458 @@
+{
+  "version": "v0.0.8",
+  "filename": "10_game.lvl",
+  "config": {
+    "id": "6c29af9f-709c-462c-a7d9-a8333f24aa40",
+    "name": "Game",
+    "bloom": {
+      "threshold": 1,
+      "knee": 0.1,
+      "enabled": false,
+      "hdr": true
+    },
+    "dof": {
+      "focus_point": 8.7,
+      "focus_scale": 2.5,
+      "radius_scale": 5,
+      "enabled": false
+    },
+    "ssao": {
+      "enabled": true,
+      "scale": 4,
+      "radius": 4,
+      "bias": 0.5
+    },
+    "ambient": {
+      "intensity": 0.55,
+      "fog": 0
+    },
+    "shadows": {
+      "num_cascade_layers": 5,
+      "shadow_multiplier": 5,
+      "debug_paint_cascades": false,
+      "max_distance": 100,
+      "fade_out": 1,
+      "bias": [
+        0,
+        0
+      ]
+    },
+    "physics": {
+      "color": [
+        1,
+        0,
+        0
+      ]
+    },
+    "debug": {
+      "empty_shapes": false,
+      "shadow": false,
+      "physics": true,
+      "lighting": false,
+      "render_debug_mode": "None",
+      "grid": false,
+      "navmeshes": false,
+      "culling": false,
+      "hide_ui": false
+    },
+    "camera": {
+      "fovy": {
+        "radians": 0.7853982
+      },
+      "znear": 0.1,
+      "zfar": 2000
+    },
+    "fxaa": {
+      "enabled": true,
+      "span_max": 8,
+      "reduce_min": 128,
+      "reduce_mul": 8
+    }
+  },
+  "scene": {
+    "prefabs": {
+      "101e1887-9d57-4b9c-a677-84de75ce751e": {
+        "id": "101e1887-9d57-4b9c-a677-84de75ce751e",
+        "tag": {
+          "name": "Sky"
+        },
+        "transform": {
+          "transform": {
+            "translation": [
+              0,
+              100,
+              1
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "components": [
+          {
+            "SkyLightComponent": {
+              "Dynamic": {
+                "background_intensity": 1,
+                "id": "123f9457-4476-48e4-adba-c2ba616fe2e2",
+                "lighting_intensity": 1,
+                "turbidity": 2
+              }
+            }
+          },
+          {
+            "LightComponent": {
+              "Directional": {
+                "azimuth": {
+                  "radians": 0
+                },
+                "inclination": {
+                  "radians": 1
+                },
+                "intensity": 1,
+                "radiance": [
+                  1,
+                  1,
+                  1
+                ],
+                "should_cast_shadows": false
+              }
+            }
+          }
+        ]
+      },
+      "214d9608-75fe-4a87-8612-326a63d84991": {
+        "id": "214d9608-75fe-4a87-8612-326a63d84991",
+        "tag": {
+          "name": "Ground"
+        },
+        "transform": {
+          "transform": {
+            "translation": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              7,
+              0.01,
+              7
+            ]
+          }
+        },
+        "components": [
+          {
+            "PhysicsComponent": {
+              "debug": false,
+              "id": "66fdb1e1-f367-4b94-add7-92b87aeef7a0",
+              "joint": {
+                "body": {
+                  "allow_rotation": [
+                    false,
+                    false,
+                    false
+                  ],
+                  "allow_translation": [
+                    false,
+                    false,
+                    false
+                  ],
+                  "ccd": false,
+                  "collider_type": {
+                    "Ground": {
+                      "height": 1,
+                      "length": 1,
+                      "width": 1
+                    }
+                  },
+                  "density": 100,
+                  "dynamic_type": "Position",
+                  "friction": 1,
+                  "id": "f444ba41-4dcf-4f74-a5a6-569c235a233b",
+                  "is_sensor": false,
+                  "restitution": 0.3
+                },
+                "config": null,
+                "id": "585a75f4-b058-4fbe-952f-bea9ac27f5bf",
+                "name": "Joint",
+                "offset": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          },
+          {
+            "ModelComponent": {
+              "cast_shadows": true,
+              "id": "6fc0cb2e-142d-4c7b-ae9f-bfc9ff68434b",
+              "skip": false,
+              "transform": {
+                "rotation": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "translation": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "8cef39f9-0f2b-48ee-90f4-17f3b43189b7": {
+        "id": "8cef39f9-0f2b-48ee-90f4-17f3b43189b7",
+        "tag": {
+          "name": "Pinball"
+        },
+        "transform": {
+          "transform": {
+            "translation": [
+              0,
+              3,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "components": [
+          {
+            "PhysicsComponent": {
+              "debug": false,
+              "id": "caf3d3df-a9dc-420b-a557-94721457e4fb",
+              "joint": {
+                "body": {
+                  "allow_rotation": [
+                    true,
+                    true,
+                    true
+                  ],
+                  "allow_translation": [
+                    true,
+                    true,
+                    true
+                  ],
+                  "ccd": false,
+                  "collider_type": {
+                    "Sphere": {
+                      "radius": 0.25
+                    }
+                  },
+                  "density": 3,
+                  "dynamic_type": "Dynamic",
+                  "friction": 1,
+                  "id": "411d6e9e-e310-4d77-88f7-023043b7ef04",
+                  "is_sensor": false,
+                  "restitution": 0.8
+                },
+                "config": null,
+                "id": "7dde510a-1e73-4831-9140-dc91f3c67c67",
+                "name": "Joint",
+                "offset": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          },
+          {
+            "ModelComponent": {
+              "cast_shadows": true,
+              "id": "3d131e90-6c1b-46b6-990f-2b8fff8e784a",
+              "skip": false,
+              "transform": {
+                "rotation": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "scale": [
+                  0.5,
+                  0.5,
+                  0.5
+                ],
+                "translation": [
+                  0,
+                  -0.25,
+                  0
+                ]
+              }
+            }
+          },
+          {
+            "Ball": {
+              "acceleration": {
+                "mps": 5
+              },
+              "max_speed": {
+                "mps": 4
+              }
+            }
+          },
+          {
+            "PrefabProviderComponent": {}
+          }
+        ]
+      },
+      "8f788158-39c4-46a9-bd27-2a9a3267664e": {
+        "id": "8f788158-39c4-46a9-bd27-2a9a3267664e",
+        "tag": {
+          "name": "Camera"
+        },
+        "transform": {
+          "transform": {
+            "translation": [
+              0,
+              5,
+              -7
+            ],
+            "rotation": [
+              0.6108652381980153,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "components": [
+          {
+            "CameraComponent": {
+              "Perspective": {
+                "fovy": {
+                  "radians": 0.7853981633974483
+                },
+                "primary": true,
+                "zfar": 100,
+                "znear": 0.1
+              }
+            }
+          }
+        ]
+      },
+      "dd2b181e-99d5-4d36-acbc-5f00a0641c95": {
+        "id": "dd2b181e-99d5-4d36-acbc-5f00a0641c95",
+        "tag": {
+          "name": "UI Ball Velocity"
+        },
+        "transform": {
+          "transform": {
+            "translation": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "components": [
+          {
+            "TextComponent": {
+              "block_alignment": {
+                "horizontal": "Left",
+                "vertical": "Top"
+              },
+              "color": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "font": "d5d1c1b8-b275-4cb9-a596-3792aa015bcb",
+              "font_size": 16,
+              "kerning": 1.2,
+              "line_height": 1,
+              "max_width": 300,
+              "opacity": 1,
+              "text": "+0.00 +0.00 +0.00",
+              "text_alignment": "Left"
+            }
+          },
+          {
+            "UIBallVelocity": {}
+          }
+        ]
+      }
+    },
+    "models": {
+      "6fc0cb2e-142d-4c7b-ae9f-bfc9ff68434b": {
+        "id": "6fc0cb2e-142d-4c7b-ae9f-bfc9ff68434b",
+        "source": "models/static-models/Cube/SM_Cube.gltf",
+        "maxInstances": 10
+      },
+      "3d131e90-6c1b-46b6-990f-2b8fff8e784a": {
+        "id": "3d131e90-6c1b-46b6-990f-2b8fff8e784a",
+        "source": "models/static-models/Pinball/SM_PinBall.gltf",
+        "maxInstances": 10
+      }
+    },
+    "trimeshes": {},
+    "textures": {},
+    "particles": {},
+    "animations": {},
+    "terrains": {},
+    "dynamic_backgrounds": {
+      "123f9457-4476-48e4-adba-c2ba616fe2e2": {
+        "id": "123f9457-4476-48e4-adba-c2ba616fe2e2"
+      }
+    },
+    "hdrs": {},
+    "audio": {},
+    "animation_state": {},
+    "heightfields": {},
+    "behavior_tree": {},
+    "planners": {},
+    "sprites": {},
+    "fonts": {
+      "d5d1c1b8-b275-4cb9-a596-3792aa015bcb": {
+        "id": "d5d1c1b8-b275-4cb9-a596-3792aa015bcb",
+        "source": "fonts/LondrinaSolid/LondrinaSolid-Regular.ttf"
+      }
+    },
+    "navmeshes": {}
+  }
+}

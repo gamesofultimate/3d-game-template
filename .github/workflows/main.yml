@@ -1,0 +1,13 @@
+on: [delete]
+
+jobs:
+  delete_branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Buildkite Pipeline when deleting a branch
+        uses: buildkite/trigger-pipeline-action@v2.2.0
+        with:
+          buildkite_api_access_token: ${{ secrets.TRIGGER_BUILDKITE_BRANCH_DELETED_TOKEN }}
+          pipeline: 'ultimate-games/3d-game'
+          message:  ":github: Triggered from deleting a branch"
+          build_env_vars: '{"BRANCH_DELETED": "${{ github.event.ref }}"}'

@@ -1,0 +1,118 @@
+{
+  "version": "v0.0.8",
+  "filename": "99_empty.lvl",
+  "config": {
+    "id": "434f4365-314c-4b0a-b510-0dd832f63da2",
+    "name": "The Moon",
+    "bloom": {
+      "threshold": 1,
+      "knee": 0.1,
+      "enabled": false,
+      "hdr": true
+    },
+    "dof": {
+      "focus_point": 8.7,
+      "focus_scale": 2.5,
+      "radius_scale": 5,
+      "enabled": false
+    },
+    "ssao": {
+      "enabled": true,
+      "scale": 4,
+      "radius": 4,
+      "bias": 0.5
+    },
+    "ambient": {
+      "intensity": 0.55,
+      "fog": 0
+    },
+    "shadows": {
+      "num_cascade_layers": 5,
+      "shadow_multiplier": 4,
+      "debug_paint_cascades": false,
+      "max_distance": 100,
+      "fade_out": 1
+    },
+    "physics": {
+      "color": [
+        1,
+        0,
+        0
+      ]
+    },
+    "debug": {
+      "empty_shapes": false,
+      "shadow": false,
+      "physics": false,
+      "lighting": false,
+      "render_debug_mode": "None",
+      "grid": false,
+      "navmeshes": false,
+      "culling": false,
+      "hide_ui": false
+    },
+    "camera": {
+      "fovy": {
+        "radians": 0.7853982
+      },
+      "znear": 0.1,
+      "zfar": 2000
+    },
+    "fxaa": {
+      "enabled": true,
+      "span_max": 8,
+      "reduce_min": 128,
+      "reduce_mul": 8
+    }
+  },
+  "scene": {
+    "prefabs": {
+      "101e1887-9d57-4b9c-a677-84de75ce751e": {
+        "id": "101e1887-9d57-4b9c-a677-84de75ce751e",
+        "tag": {
+          "name": ""
+        },
+        "transform": {
+          "transform": {
+            "translation": [
+              -0.5,
+              0,
+              1
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "components": []
+      }
+    },
+    "models": {},
+    "trimeshes": {},
+    "textures": {},
+    "particles": {},
+    "animations": {},
+    "terrains": {},
+    "dynamic_backgrounds": {
+      "123f9457-4476-48e4-adba-c2ba616fe2e2": {
+        "id": "123f9457-4476-48e4-adba-c2ba616fe2e2"
+      }
+    },
+    "hdrs": {},
+    "audio": {},
+    "animation_state": {},
+    "heightfields": {},
+    "behavior_tree": {},
+    "planners": {},
+    "sprites": {},
+    "fonts": {},
+    "navmeshes": {}
+  }
+}
