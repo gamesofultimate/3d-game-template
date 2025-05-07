@@ -1,3 +1,5 @@
+use std::f32::consts::PI;
+
 use engine::{
   application::{
     components::{AudioSourceComponent, SourceState},
@@ -70,7 +72,12 @@ impl PickupSystem {
       );
 
       scene.spawn_prefab_with("Pickup Prefab", |prefab| {
+        let mut rng = rand::thread_rng();
+
         prefab.transform.translation = Vector3::new(x, prefab.transform.translation.y, z);
+        prefab.transform.rotation.x = rng.gen_range(-PI..PI);
+        prefab.transform.rotation.y = rng.gen_range(-PI..PI);
+        prefab.transform.rotation.z = rng.gen_range(-PI..PI);
       });
 
       data.spawned += 1;

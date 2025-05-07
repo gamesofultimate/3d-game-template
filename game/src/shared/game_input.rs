@@ -195,6 +195,20 @@ impl GameInput {
         self.forward += 1.0;
       }
 
+      DeviceEvent::Keyboard(KeyboardEvent::Button(ButtonState::Down, KeyboardKey::O)) => {
+        self.state |= GameInputState::ToggleDebugPhysics;
+      }
+      DeviceEvent::Keyboard(KeyboardEvent::Button(ButtonState::Up, KeyboardKey::O)) => {
+        self.state -= GameInputState::ToggleDebugPhysics;
+      }
+
+      DeviceEvent::Keyboard(KeyboardEvent::Button(ButtonState::Down, KeyboardKey::P)) => {
+        self.state |= GameInputState::ToggleDebugPerformance;
+      }
+      DeviceEvent::Keyboard(KeyboardEvent::Button(ButtonState::Up, KeyboardKey::P)) => {
+        self.state -= GameInputState::ToggleDebugPerformance;
+      }
+
       DeviceEvent::Keyboard(KeyboardEvent::Button(
         ButtonState::Down,
         KeyboardKey::Key0 | KeyboardKey::Numpad0,
