@@ -1,5 +1,8 @@
 use engine::{
-  application::scene::{Collision, Scene, TransformComponent},
+  application::{
+    components::{AudioSourceComponent, SourceState},
+    scene::{Collision, Scene, TransformComponent},
+  },
   nalgebra::Vector3,
   systems::{Backpack, Initializable, Inventory, System},
 };
@@ -79,20 +82,23 @@ impl PickupSystem {
   fn handle_collect_pickup(&mut self, scene: &mut Scene, backpack: &mut Backpack) -> Option<()> {
     let mut collected = vec![];
 
-    for (pickup_entity, (_pickup, _collision)) in
-      scene.query_mut::<(&Pickup, &Collision<Ball, Pickup>)>()
+    for (pickup_entity, (transform, _pickup, _collision)) in
+      scene.query_mut::<(&TransformComponent, &Pickup, &Collision<Ball, Pickup>)>()
     {
-      collected.push(pickup_entity);
+      collected.push((pickup_entity, transform.translation));
 
       let data = backpack.get_mut::<PickupSystemData>()?;
       data.spawned -= 1;
       data.player_score += 1;
-
-      log::error!("Pickup collected! Score: {}", data.player_score);
     }
 
-    for pickup_entity in collected {
+    for (pickup_entity, pickup_translation) in collected {
       let _ = scene.remove_entity(pickup_entity);
+
+      scene.spawn_prefab_with("Pickup Sound Prefab", |prefab| {
+        prefab.transform.translation = pickup_translation;
+        prefab.get_mut::<AudioSourceComponent>().unwrap().state = SourceState::Playing;
+      });
     }
 
     Some(())

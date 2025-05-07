@@ -1,5 +1,5 @@
 {
-  "version": "v0.0.8",
+  "version": "v0.0.9",
   "filename": "10_game.lvl",
   "config": {
     "id": "6c29af9f-709c-462c-a7d9-a8333f24aa40",
@@ -35,7 +35,8 @@
       "bias": [
         0,
         0
-      ]
+      ],
+      "terrain_shadow_bias": 20
     },
     "physics": {
       "color": [
@@ -362,6 +363,12 @@
                 "znear": 0.1
               }
             }
+          },
+          {
+            "AudioListenerComponent": {
+              "active": true,
+              "id": "e615942b-37b6-4539-b04a-081c77add594"
+            }
           }
         ]
       },
@@ -640,6 +647,83 @@
             "UIScore": {}
           }
         ]
+      },
+      "6e12ded0-c48e-4257-b873-f66955776713": {
+        "id": "6e12ded0-c48e-4257-b873-f66955776713",
+        "tag": {
+          "name": "Pickup Sound Prefab"
+        },
+        "transform": {
+          "transform": {
+            "translation": [
+              0,
+              10,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "components": [
+          {
+            "AudioSourceComponent": {
+              "audio_id": "5f53ad01-32f4-4b76-a635-e7f867ccba3a",
+              "id": "5341bc9a-2006-496e-907b-de4645cfad66",
+              "should_loop": false,
+              "spatial": null,
+              "state": "Playing",
+              "volume": -10
+            }
+          },
+          {
+            "PrefabProviderComponent": {}
+          }
+        ]
+      },
+      "43234c96-d05c-4917-b2be-189894e2750c": {
+        "id": "43234c96-d05c-4917-b2be-189894e2750c",
+        "tag": {
+          "name": "Pickup Sound Asset"
+        },
+        "transform": {
+          "transform": {
+            "translation": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "components": [
+          {
+            "AudioSourceComponent": {
+              "audio_id": "5f53ad01-32f4-4b76-a635-e7f867ccba3a",
+              "id": "dbb7ce9e-ecd6-47fb-b5c3-d92206571f4f",
+              "should_loop": false,
+              "spatial": null,
+              "state": "Stopped",
+              "volume": 0
+            }
+          }
+        ]
       }
     },
     "models": {
@@ -665,7 +749,12 @@
       }
     },
     "hdrs": {},
-    "audio": {},
+    "audio": {
+      "5f53ad01-32f4-4b76-a635-e7f867ccba3a": {
+        "id": "5f53ad01-32f4-4b76-a635-e7f867ccba3a",
+        "source": "audio/pickup.mp3"
+      }
+    },
     "animation_state": {},
     "heightfields": {},
     "behavior_tree": {},
