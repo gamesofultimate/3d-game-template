@@ -499,7 +499,7 @@
                     }
                   },
                   "density": 1,
-                  "dynamic_type": "Static",
+                  "dynamic_type": "Position",
                   "friction": 0.1,
                   "id": "616fe263-6689-4c88-aa58-daa036d3e615",
                   "is_sensor": true,
@@ -521,6 +521,17 @@
           },
           {
             "PrefabProviderComponent": {}
+          },
+          {
+            "Hover": {
+              "easing": "SineInOut",
+              "loop_duration": {
+                "seconds": 0.8
+              },
+              "amplitude": {
+                "meters": 0.1
+              }
+            }
           }
         ]
       },

@@ -377,6 +377,190 @@
     },
     {
       "tag": "Struct",
+      "name": "Hover",
+      "label": "Hover",
+      "default_values": "{ amplitude: { meters: 0.0 }, easing: \"Linear\", loop_duration: { seconds: 0.0 } }",
+      "duplicate_values": "null",
+      "docs": null,
+      "fields": [
+        {
+          "name": "amplitude",
+          "label": "Amplitude",
+          "docs": null,
+          "ty": {
+            "tag": "Custom",
+            "name": "Meters",
+            "default_values": "{ meters: 0.0 }",
+            "duplicate_values": "null",
+            "ty": "Meters"
+          }
+        },
+        {
+          "name": "easing",
+          "label": "Easing",
+          "docs": null,
+          "ty": {
+            "tag": "Enum",
+            "name": "Easing",
+            "label": "Easing",
+            "default_values": "\"Linear\"",
+            "duplicate_values": "null",
+            "docs": null,
+            "variants": [
+              {
+                "tag": "Unit",
+                "name": "Linear",
+                "docs": null,
+                "default_values": "\"Linear\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "SineIn",
+                "docs": null,
+                "default_values": "\"SineIn\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "SineOut",
+                "docs": null,
+                "default_values": "\"SineOut\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "SineInOut",
+                "docs": null,
+                "default_values": "\"SineInOut\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "CubicIn",
+                "docs": null,
+                "default_values": "\"CubicIn\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "CubicOut",
+                "docs": null,
+                "default_values": "\"CubicOut\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "CubicInOut",
+                "docs": null,
+                "default_values": "\"CubicInOut\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "CircIn",
+                "docs": null,
+                "default_values": "\"CircIn\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "CircOut",
+                "docs": null,
+                "default_values": "\"CircOut\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "CircInOut",
+                "docs": null,
+                "default_values": "\"CircInOut\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "BackIn",
+                "docs": null,
+                "default_values": "\"BackIn\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "BackOut",
+                "docs": null,
+                "default_values": "\"BackOut\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "BackInOut",
+                "docs": null,
+                "default_values": "\"BackInOut\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "ElasticIn",
+                "docs": null,
+                "default_values": "\"ElasticIn\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "ElasticOut",
+                "docs": null,
+                "default_values": "\"ElasticOut\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "ElasticInOut",
+                "docs": null,
+                "default_values": "\"ElasticInOut\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "BounceIn",
+                "docs": null,
+                "default_values": "\"BounceIn\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "BounceOut",
+                "docs": null,
+                "default_values": "\"BounceOut\"",
+                "duplicate_values": "null"
+              },
+              {
+                "tag": "Unit",
+                "name": "BounceInOut",
+                "docs": null,
+                "default_values": "\"BounceInOut\"",
+                "duplicate_values": "null"
+              }
+            ],
+            "private": false
+          }
+        },
+        {
+          "name": "loop_duration",
+          "label": "Loop Duration",
+          "docs": null,
+          "ty": {
+            "tag": "Custom",
+            "name": "Seconds",
+            "default_values": "{ seconds: 0.0 }",
+            "duplicate_values": "null",
+            "ty": "Seconds"
+          }
+        }
+      ],
+      "private": false
+    },
+    {
+      "tag": "Struct",
       "name": "IdComponent",
       "label": "Id Component",
       "default_values": "{  }",

@@ -1,5 +1,11 @@
 use engine::{
-  application::scene::ProvideAssets, nalgebra::Vector3, systems::Registry, utils::units::Mps,
+  application::scene::ProvideAssets,
+  nalgebra::Vector3,
+  systems::Registry,
+  utils::{
+    easing::Easing,
+    units::{Meters, Mps, Seconds},
+  },
 };
 use tagged::{Duplicate, Registerable, Schema};
 
@@ -15,6 +21,7 @@ impl Registry for GameComponents {
     Ball::register();
     Pickup::register();
     SpawnArea::register();
+    Hover::register();
   }
 }
 
@@ -46,3 +53,18 @@ impl ProvideAssets for Pickup {}
 pub struct SpawnArea {}
 
 impl ProvideAssets for SpawnArea {}
+
+#[derive(Debug, Clone, Serialize, Deserialize, Registerable, Schema, Duplicate)]
+pub struct Hover {
+  pub amplitude: Meters,
+  pub easing: Easing,
+  pub loop_duration: Seconds,
+
+  #[serde(skip)]
+  pub starting_y: Option<f32>,
+
+  #[serde(skip)]
+  pub current_time: Seconds,
+}
+
+impl ProvideAssets for Hover {}
